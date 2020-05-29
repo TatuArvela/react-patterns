@@ -1,6 +1,7 @@
 {
   "name": "react-patterns",
   "version": "0.1.0",
+  "description": "Set of sample code, configurations and patterns for React",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
