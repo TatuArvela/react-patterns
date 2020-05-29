@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeProvider } from 'styled-components';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { GlobalStyle, theme } from './styledComponents';
-import { ThemeProvider } from 'styled-components';
 
 ReactDOM.render(
   <React.StrictMode>
