@@ -7,15 +7,15 @@
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
   "plugins": [
-    "react",
-    "jsx-a11y",
-    "import",
-    "prettier",
     "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "prettier",
+    "react",
     "simple-import-sort"
   ],
   "rules": {
