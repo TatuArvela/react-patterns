@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Encom from './encom/Encom';
 import GlobalStyle from './globalStyle';
 import Home from './home/Home';
 import * as serviceWorker from './serviceWorker';
@@ -11,6 +12,9 @@ ReactDOM.render(
     <GlobalStyle />
     <BrowserRouter>
       <Switch>
+        <Route path="/encom">
+          <Encom />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
