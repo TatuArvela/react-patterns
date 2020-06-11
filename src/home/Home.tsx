@@ -40,7 +40,7 @@ const Link = styled.a`
   color: #61dafb;
 `;
 
-const App: React.FunctionComponent = () => (
+const Home: React.FunctionComponent = () => (
   <AppElement>
     <Header>
       <Logo src={logo} alt="logo" />
@@ -58,4 +58,4 @@ const App: React.FunctionComponent = () => (
   </AppElement>
 );
 
-export default App;
+export default Home;
