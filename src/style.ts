@@ -5,7 +5,7 @@ type Theme = {
   codeFont: string;
 };
 
-export const theme: Theme = {
+export const defaultTheme: Theme = {
   mainFont:
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   codeFont:

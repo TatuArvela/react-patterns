@@ -5,11 +5,11 @@ import { ThemeProvider } from 'styled-components';
 
 import Home from './home/Home';
 import * as serviceWorker from './serviceWorker';
-import { GlobalStyle, theme } from './styledComponents';
+import { defaultTheme, GlobalStyle } from './style';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <BrowserRouter>
         <Switch>
