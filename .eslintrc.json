@@ -19,6 +19,7 @@
     "simple-import-sort"
   ],
   "rules": {
+    "indent": ["error", 2],
     "prettier/prettier": [
       "error"
     ],
