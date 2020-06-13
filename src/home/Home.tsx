@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import logo from './logo.svg';
@@ -36,7 +37,12 @@ const Header = styled.header`
   color: white;
 `;
 
-const Link = styled.a`
+const Divider = styled.hr`
+  width: 60vmin;
+  margin: 1em 0 0.7em 0;
+`;
+
+const Anchor = styled.a`
   color: #61dafb;
 `;
 
@@ -47,12 +53,16 @@ const Home: React.FunctionComponent = () => (
       <p>
         Edit <code>src/App.tsx</code> and save to reload.
       </p>
-      <Link
+      <Anchor
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
       >
         Learn React
+      </Anchor>
+      <Divider />
+      <Link to="/apicom" component={Anchor}>
+        APICOM
       </Link>
     </Header>
   </AppElement>

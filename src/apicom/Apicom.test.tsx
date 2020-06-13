@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import Encom from './Encom';
+import Apicom from './Apicom';
 
 test('renders title element', () => {
-  const { getByText } = render(<Encom />);
-  const titleElement = getByText(/encom/i);
+  const { getByText } = render(<Apicom />);
+  const titleElement = getByText(/apicom/i);
   expect(titleElement).toBeInTheDocument();
 });
