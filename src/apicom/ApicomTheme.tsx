@@ -1,7 +1,6 @@
 // createGlobalStyle does not currently support @import, so this is the way to use Google Fonts
 import './fonts.css';
 
-import React from 'react';
 import styled, { css } from 'styled-components';
 
 const reset = css`
@@ -10,14 +9,13 @@ const reset = css`
   border: 0;
 `;
 
-// Using CSS Variables is far more convenient than using ThemeProvider when the theme is static
-const CSSVariableProvider = styled.div`
-  ${reset};
+const cssVariables = css`
   --size-xs: 4px;
   --size-s: 8px;
   --size-m: 16px;
   --size-l: 32px;
-  --size-xl: 64px;
+  --size-xl: 48px;
+  --size-xxl: 64px;
 
   --color-blue: #2f77bc;
   --color-yellow: #dda027;
@@ -25,10 +23,17 @@ const CSSVariableProvider = styled.div`
   --color-red: #bd2126;
   --color-black: #000000;
   --color-white: #ffffff;
+
+  --font-main: 'Roboto', sans-serif;
+  --font-data: 'IBM Plex Mono', monospace;
+  --font-title: 'Righteous', sans-serif;
 `;
 
-const ApicomTheme: React.FunctionComponent = ({ children }) => {
-  return <CSSVariableProvider>{children}</CSSVariableProvider>;
-};
+// Using CSS Variables is far more convenient than using ThemeProvider when the theme is static
+const ApicomTheme = styled.div`
+  ${reset};
+  ${cssVariables};
+  font-family: var(--font-main);
+`;
 
 export default ApicomTheme;

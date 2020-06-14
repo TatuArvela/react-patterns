@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import ApicomTheme from './ApicomTheme';
-import QueryBuilder from './queryBuilder/QueryBuilder';
 import QueryResults from './queryResults/QueryResults';
 import Settings from './settings/Settings';
+import Button from './shared/Button';
+import Input from './shared/Input';
 
 const Wrapper = styled.div`
   background: var(--color-black)
@@ -17,7 +18,6 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   color: var(--color-white);
   display: flex;
-  font-family: 'Roboto Mono', monospace;
   font-size: var(--size-m);
   height: 100vh;
   padding: var(--size-xl);
@@ -49,27 +49,11 @@ const ScrollArea = styled.div`
   scrollbar-width: none;
 `;
 
-const FetchButton = styled.button`
-  background-color: var(--color-red);
-  border-radius: var(--size-m);
-  border: none;
-  color: var(--color-black);
-  cursor: pointer;
-  display: block;
-  font-size: var(--size-m);
-  font-weight: bold;
-  margin: var(--size-s) 0;
-  padding: var(--size-m);
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-`;
-
 const Title = styled.h1`
-  font-family: 'Righteous', sans-serif;
+  font-family: var(--font-title);
   color: var(--color-blue);
-  font-size: calc(var(--size-xl) * 2);
-  line-height: calc(var(--size-xl) * 2);
+  font-size: calc(var(--size-xxl) * 2);
+  line-height: calc(var(--size-xxl) * 2);
   margin: 0;
   text-align: right;
   user-select: none;
@@ -86,12 +70,12 @@ const Apicom: React.FunctionComponent = () => {
         <OuterBorder>
           <InnerBorder>
             <ScrollArea>
-              <QueryBuilder />
+              <Input color="var(--color-yellow)" labelText="URL" id="url" />
               <Settings
                 showSettings={showSettings}
                 setShowSettings={setShowSettings}
               />
-              <FetchButton>Fetch</FetchButton>
+              <Button color="var(--color-red)">Fetch</Button>
               <QueryResults />
             </ScrollArea>
             <Title>Apicom</Title>
