@@ -34,7 +34,7 @@ const Settings: React.FunctionComponent<SettingsProps> = ({
         color="var(--color-orange)"
         onClick={() => setShowSettings(!showSettings)}
       >
-        Settings
+        {showSettings ? 'Hide settings' : 'Show settings'}
       </Button>
       <SettingsContainer showSettings={showSettings}>
         Add settings here
