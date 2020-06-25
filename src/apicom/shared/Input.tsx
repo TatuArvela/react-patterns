@@ -42,17 +42,21 @@ type InputProps = {
   color: string;
   id: string;
   labelText: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input: React.FunctionComponent<InputProps> = ({
   color,
   id,
   labelText,
+  value,
+  onChange,
 }) => {
   return (
     <InputWrapper color={color}>
       <LabelText color={color}>{labelText}</LabelText>
-      <InputElement id={id} color={color} />
+      <InputElement id={id} color={color} value={value} onChange={onChange} />
     </InputWrapper>
   );
 };

@@ -61,22 +61,35 @@ const Title = styled.h1`
 `;
 
 const Apicom: React.FunctionComponent = () => {
-  // const [data, setData] = useState([]);
+  const [url, setUrl] = useState('');
   const [showSettings, setShowSettings] = useState(false);
-
+  const [queryResults, setQueryResults] = useState<unknown[]>();
+  const executeQuery = () =>
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => (Array.isArray(data) ? data : [data]))
+      .then((array) => setQueryResults(array));
   return (
     <ApicomTheme>
       <Wrapper>
         <OuterBorder>
           <InnerBorder>
             <ScrollArea>
-              <Input color="var(--color-yellow)" labelText="URL" id="url" />
+              <Input
+                color="var(--color-yellow)"
+                labelText="URL"
+                id="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+              />
               <Settings
                 showSettings={showSettings}
                 setShowSettings={setShowSettings}
               />
-              <Button color="var(--color-red)">Fetch</Button>
-              <QueryResults />
+              <Button color="var(--color-red)" onClick={() => executeQuery()}>
+                View data
+              </Button>
+              {queryResults && <QueryResults />}
             </ScrollArea>
             <Title>Apicom</Title>
           </InnerBorder>
