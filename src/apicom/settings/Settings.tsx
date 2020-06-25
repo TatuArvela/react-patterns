@@ -9,8 +9,7 @@ const SettingsContainer = styled.div<{ showSettings: boolean }>`
   align-items: center;
   justify-content: center;
   height: ${(p) => (p.showSettings ? 'var(--size-xl)' : '0')};
-  margin: ${(p) =>
-    p.showSettings ? 'var(--size-s) 0' : 'calc(var(--size-s) * -0.5) 0'};
+  margin: ${(p) => (p.showSettings ? 'var(--size-s) 0' : '0')};
   opacity: ${(p) => (p.showSettings ? '1' : '0')};
   overflow: hidden;
   padding: ${(p) => (p.showSettings ? 'var(--size-l)' : '0 var(--size-l)')};

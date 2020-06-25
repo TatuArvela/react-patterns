@@ -41,12 +41,12 @@ const InnerBorder = styled.div`
   padding: var(--size-m);
 `;
 
-const ScrollArea = styled.div`
+const Content = styled.div`
   flex-grow: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   padding: var(--size-xl) var(--size-m);
-  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.h1`
@@ -63,18 +63,23 @@ const Title = styled.h1`
 const Apicom: React.FunctionComponent = () => {
   const [url, setUrl] = useState('');
   const [showSettings, setShowSettings] = useState(false);
-  const [queryResults, setQueryResults] = useState<unknown[]>();
+  const [queryResults, setQueryResults] = useState<Record<string, unknown>[]>();
+
+  // TODO: Separate to utility
   const executeQuery = () =>
     fetch(url)
       .then((response) => response.json())
       .then((data) => (Array.isArray(data) ? data : [data]))
-      .then((array) => setQueryResults(array));
+      .then((array) => {
+        setQueryResults(array);
+      });
+
   return (
     <ApicomTheme>
       <Wrapper>
         <OuterBorder>
           <InnerBorder>
-            <ScrollArea>
+            <Content>
               <Input
                 color="var(--color-yellow)"
                 labelText="URL"
@@ -89,8 +94,8 @@ const Apicom: React.FunctionComponent = () => {
               <Button color="var(--color-red)" onClick={() => executeQuery()}>
                 View data
               </Button>
-              {queryResults && <QueryResults />}
-            </ScrollArea>
+              {queryResults && <QueryResults queryResults={queryResults} />}
+            </Content>
             <Title>Apicom</Title>
           </InnerBorder>
         </OuterBorder>

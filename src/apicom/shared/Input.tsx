@@ -12,6 +12,7 @@ const InputWrapper = styled.label<{ color: string }>`
   margin: var(--size-s) 0;
   width: 100%;
   overflow: hidden;
+  flex-shrink: 0;
 `;
 
 const LabelText = styled.span<{ color: string }>`

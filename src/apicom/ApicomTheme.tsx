@@ -10,6 +10,7 @@ const reset = css`
 `;
 
 const cssVariables = css`
+  --size-xxs: 2px;
   --size-xs: 4px;
   --size-s: 8px;
   --size-m: 16px;
